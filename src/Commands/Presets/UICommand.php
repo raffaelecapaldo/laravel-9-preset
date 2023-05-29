@@ -64,7 +64,7 @@ class UICommand extends Preset
     public static function add_welcome_page()
     {
         //$this->info('Adding welcome view');
-        File::delete(base_path('views/welcome.blade.php'));
+        File::delete(resource_path('views/welcome.blade.php'));
         File::copy(__DIR__ . '/../../stubs/home.blade.php', resource_path('views/home.blade.php'));
     }
 
