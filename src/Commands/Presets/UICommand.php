@@ -22,6 +22,8 @@ class UICommand extends Preset
         self::update_packages(['dependencies', 'devDependencies']);
         // delete unused config files
         self::clean_up();
+        //add scaffolding
+        self::scaffolding();
     }
 
     public static function update_css()
@@ -63,5 +65,13 @@ class UICommand extends Preset
     {
         //$this->info('Adding welcome view');
         File::copy(__DIR__ . '/../../stubs/welcome.blade.php', resource_path('views/welcome.blade.php'));
+    }
+
+    public static function scaffolding() {
+        File::copy(__DIR__ . '/../../stubs/views/partials/header.blade.php', resource_path('views/partials/header.blade.php'));
+        File::copy(__DIR__ . '/../../stubs/views/partials/footer.blade.php', resource_path('views/partials/footer.blade.php'));
+        File::copy(__DIR__ . '/../../stubs/views/layouts/general.blade.php', resource_path('views/layouts/general.blade.php'));
+
+
     }
 }

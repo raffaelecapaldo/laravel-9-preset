@@ -22,7 +22,7 @@ class Helpers
     if ($configuration_key === 'dependencies') {
       $package_array = [
         "@popperjs/core" => "^2.11.6",
-        "bootstrap" => "^5.2.2"
+        "bootstrap" => "^5.2.3"
       ];
     } else {
       /* TODO: leave in the array only sass, remove the others */
