@@ -64,12 +64,14 @@ class UICommand extends Preset
     public static function add_welcome_page()
     {
         //$this->info('Adding welcome view');
-        File::copy(__DIR__ . '/../../stubs/welcome.blade.php', resource_path('views/welcome.blade.php'));
+        File::delete(base_path('views/welcome.blade.php'));
+        File::copy(__DIR__ . '/../../stubs/home.blade.php', resource_path('views/home.blade.php'));
     }
 
     public static function scaffolding() {
         File::makeDirectory(resource_path('views/partials'));
         File::makeDirectory(resource_path('views/layouts'));
+        File::copy(__DIR__ . '/../../stubs/routes/web.php', base_path('routes/web.php'));
         File::copy(__DIR__ . '/../../stubs/views/partials/header.blade.php', resource_path('views/partials/header.blade.php'));
         File::copy(__DIR__ . '/../../stubs/views/partials/footer.blade.php', resource_path('views/partials/footer.blade.php'));
         File::copy(__DIR__ . '/../../stubs/views/layouts/general.blade.php', resource_path('views/layouts/general.blade.php'));
