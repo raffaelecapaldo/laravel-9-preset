@@ -68,6 +68,8 @@ class UICommand extends Preset
     }
 
     public static function scaffolding() {
+        File::makeDirectory(resource_path('views/partials'));
+        File::makeDirectory(resource_path('views/layouts'));
         File::copy(__DIR__ . '/../../stubs/views/partials/header.blade.php', resource_path('views/partials/header.blade.php'));
         File::copy(__DIR__ . '/../../stubs/views/partials/footer.blade.php', resource_path('views/partials/footer.blade.php'));
         File::copy(__DIR__ . '/../../stubs/views/layouts/general.blade.php', resource_path('views/layouts/general.blade.php'));
